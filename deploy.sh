@@ -1,8 +1,7 @@
 #!/bin/bash
 
 echo -e "\033[0;32mFor blog-hugo...\033[0m"
-# 
-rm -rf public
+# rm -rf public
 # Add changes to git.
 git add -A
 
