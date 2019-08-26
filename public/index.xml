@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Flygar&#39;s Blog</title>
+    <link>https://flygar.github.io/</link>
+    <description>Recent content on Flygar&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 25 Aug 2019 22:38:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://flygar.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Blog Backup</title>
+      <link>https://flygar.github.io/quote/blog-backup/</link>
+      <pubDate>Sun, 25 Aug 2019 22:38:18 +0800</pubDate>
+      
+      <guid>https://flygar.github.io/quote/blog-backup/</guid>
+      <description>Github pages Back up 操作系统：ubuntu16.04 安装Hexo # 更新源并升级 apt update &amp;amp;&amp;amp; apt upgrade # 安装git apt install git -y # 安装nvm wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh # 通过nvm安装Node.js nvm install stable # 安装hexo部署到git page的deployer npm install hexo-deployer-git --save &amp;amp;&amp;amp; npm audit fix # 安装hexo并初始化 npm install -g hexo-cli &amp;amp;&amp;amp; hexo init blog &amp;amp;&amp;amp; cd blog &amp;amp;&amp;amp; npm install  同步Github # 创建密钥并将id_rsa.pub内容添加至github ssh-keygen -t rsa -b 4096 -C &amp;quot;your_email@example.com&amp;quot; # 测试 ssh -T git@github.</description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>https://flygar.github.io/quote/docker/</link>
+      <pubDate>Sun, 25 Aug 2019 22:38:18 +0800</pubDate>
+      
+      <guid>https://flygar.github.io/quote/docker/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;镜像仓库-镜像库-镜像-容器实例
+容器(container)实例的运行依赖image文件
+一个image文件可以生成多个容器(container)实例
+命令中的container可以去掉&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Git</title>
+      <link>https://flygar.github.io/quote/git/</link>
+      <pubDate>Sun, 25 Aug 2019 22:38:18 +0800</pubDate>
+      
+      <guid>https://flygar.github.io/quote/git/</guid>
+      <description>add：追踪并添加到暂存区
+commit：提交到git仓库(用来保存项目的元数据和对象数据库) 配置信息 # 查看用户信息 cat ~/.gitconfig # 查看配置 git config --list  获取git仓库 # 获取远程git仓库并在本地将仓库命名为blog git clone git@github.com:Flygar/Flygar.github.io.git blog  文件比较 # 查看工作目录与暂存区的文件差异(尚未暂存的文件更新内容) git diff # 查看暂存区文件更新的内容与上次提交的内容差异 git diff --staged # 跳过使用暂存区域，自动把所有已经跟踪过(add提交过)的文件暂存起来一并提交，从而跳过 git add 步骤 git commit -a -m &#39;...&#39;  删除 # 删除git仓库及本地文件 git rm file.log # 从Git仓库中删除,保留本地文件(常用于将已跟踪文件添加至.gitingore) git rm --cached file.log  撤销 git commit -m &#39;initial commit&#39; git add forgotten_file git commit --amend # 将forgotten_file提交信息为&amp;quot;initial commit&amp;quot; git reset HEAD file.</description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>https://flygar.github.io/quote/linux/</link>
+      <pubDate>Sun, 25 Aug 2019 22:38:18 +0800</pubDate>
+      
+      <guid>https://flygar.github.io/quote/linux/</guid>
+      <description>-- Linux 别名快捷登录 vim /etc/ssh/ssh_config添加如下配置
+Host dv HostName example.com User domainuser  终端里执行ssh dv,相当于ssh domainuser@example.com
+Linux history # ~/.bashrc # HISTSIZE 定义了 history 命令输出的记录数. HISTSIZE=10000 # HISTFILESIZE 定义了在 ~/.bash_history 中保存命令的记录总数. HISTFILESIZE=10000 # 记录空格开头的命，并且去除重复行 HISTCONTROL=ignoredups # 由于bash的history文件默认是覆盖，如果存在多个终端，最后退出的会覆盖以前历史记录，改为追加形式 shopt -s histappend # 当前终端的命令实时追加至 ~/.bash_history PROMPT_COMMAND=&amp;quot;history -a&amp;quot; # 记录时间 HISTTIMEFORMAT=&#39;%F %T &#39; # 执行上一条命令 !! # 执行上一条命令 !-2 # 找出最近一次以go开头的命令,并执行 !&amp;lt;go&amp;gt; # 使用history的编号重复执行先前的命令 !&amp;lt;ID&amp;gt; # 将第&amp;lt;ID&amp;gt;条命令中的第一个&amp;lt;string1&amp;gt;替换成&amp;lt;string2&amp;gt;，并执行 !&amp;lt;ID&amp;gt;:s/&amp;lt;string1&amp;gt;/&amp;lt;string2&amp;gt;/ # 全部替换 !&amp;lt;ID&amp;gt;:gs/&amp;lt;string1&amp;gt;/&amp;lt;string2&amp;gt;/ # 利用 ctrl + r 进行模糊搜索使用过的命令，优先显示最近的结果,再次 ctrl + r 向&amp;lt;ID&amp;gt;小的方向搜索(向后搜索) ctrl+r  Linux screen # screen待补充 # 终端1新建服务 screen -S test # 终端2同步终端1 screen -x test  Linux 默认本地化设置 echo &amp;quot;export LC_ALL=C&amp;quot;&amp;gt;&amp;gt;~/.</description>
+    </item>
+    
+    <item>
+      <title>My first Post temple</title>
+      <link>https://flygar.github.io/posts/temple/</link>
+      <pubDate>Sun, 25 Aug 2019 22:17:47 +0800</pubDate>
+      
+      <guid>https://flygar.github.io/posts/temple/</guid>
+      <description>&lt;p&gt;自定义摘要&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于</title>
+      <link>https://flygar.github.io/about/</link>
+      <pubDate>Mon, 17 Jun 2019 22:52:07 +0800</pubDate>
+      
+      <guid>https://flygar.github.io/about/</guid>
+      <description> Do one thing and do it well Done is better than perfect Make it work, right and fast  </description>
+    </item>
+    
+    <item>
+      <title>归档</title>
+      <link>https://flygar.github.io/archives/</link>
+      <pubDate>Mon, 17 Jun 2019 22:17:47 +0800</pubDate>
+      
+      <guid>https://flygar.github.io/archives/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang Magic</title>
+      <link>https://flygar.github.io/posts/golang-magic/</link>
+      <pubDate>Sun, 12 Aug 2018 20:14:03 +0000</pubDate>
+      
+      <guid>https://flygar.github.io/posts/golang-magic/</guid>
+      <description>诡异的操作
+a:=&amp;quot;hello&amp;quot; b:=123 //%后的副词[n]告诉Print函数使用第n个操作数 fmt.Printf(&amp;quot;%[2]d, %[1]s, %[1]T, %[2]T, %[1]q&amp;quot;,a,b)  </description>
+    </item>
+    
+    <item>
+      <title>Golang Bit Operation</title>
+      <link>https://flygar.github.io/posts/golang-bit-operation/</link>
+      <pubDate>Sun, 12 Aug 2018 18:28:46 +0000</pubDate>
+      
+      <guid>https://flygar.github.io/posts/golang-bit-operation/</guid>
+      <description>Bool类型的零值“false” &amp;ldquo;&amp;amp;&amp;amp;&amp;rdquo;:有假则假;&amp;ldquo;||&amp;rdquo;:有真则真; 当运算符左边表达式的值已经能够决定整个表达式的值的时候(&amp;amp;&amp;amp; 左边的值为 false，|| 左边的值为 true)，运算符右边的表达式将不会被执行。利用这个性 质，如果有多个条件判断，应当将计算过程较为复杂的表达式放在运算符的右侧以减少不必要的运算。
+ bit位运算 ax := 1 &amp;lt;&amp;lt; 1 // 00000010 bx := 1 &amp;lt;&amp;lt; 5 // 00100000 // 按位或 | : 有1则1 cx := ax | bx // 00100010 fmt.Printf(&amp;quot;ax(%d)的二进制: %08b\nbx(%d)的二进制: %08b\ncx(%d)的二进制: %08b\n&amp;quot;, ax, ax, bx, bx, cx, cx) ay := 4 &amp;gt;&amp;gt; 1 // 00000010 by := 7 &amp;gt;&amp;gt; 1 // 00000011 // 按位与 &amp;amp; : 有0则0 cy := ay &amp;amp; by // 00000010 fmt.</description>
+    </item>
+    
+    <item>
+      <title>Golang Slice</title>
+      <link>https://flygar.github.io/posts/golang-slice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://flygar.github.io/posts/golang-slice/</guid>
+      <description>Golang入门计划 //slice「easySlice1」的slice. [1:3]左闭右开. cap 为[1:]. len 为2. 引用传递 easySlice1 := [][]int{{1, 2}, {3, 4}, {5, 6, 7, 8}, {9, 10}, {99, 100}}[1:3] fmt.Println(easySlice1) fmt.Println(cap(easySlice1)) //change easySlice1 easySlice1[0][1] = int(44) easySlice1[1] = []int{1, 2, 3, 4} fmt.Println(easySlice1) //将数组转为切片 //报错：slice of unaddressable value; 需要先赋值给一个变量 easyArray = [5][5]int{{1, 2}, {3, 4, 5, 6, 7}}[:] //正确操作 easyArray := [5][5]int{{1, 2}, {3, 4, 5, 6, 7}} easySlice2 := easyArray[:] fmt.Println(easySlice2) //slice and map mapResults := make(map[int]string) // var arrResults [][]string arrResults := make([][]string, 0) const LOOPCOUNT = 3 for i := 0; i &amp;lt; LOOPCOUNT; i++ { valueStr := fmt.</description>
+    </item>
+    
+    <item>
+      <title>Golang rune and byte</title>
+      <link>https://flygar.github.io/posts/golang-rune/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://flygar.github.io/posts/golang-rune/</guid>
+      <description>The difference between golang&amp;rsquo;s string and byte and rune
+  在Go当中 string底层是用byte数组存的，并且是不可以改变的。
+ 源码中的定义 // string is the set of all strings of 8-bit bytes, conventionally but not // necessarily representing UTF-8-encoded text. A string may be empty, but // not nil. Values of string type are immutable. type string string // byte is an alias for uint8 and is equivalent to uint8 in all ways. It is // used, by convention, to distinguish byte values from 8-bit unsigned // integer values.</description>
+    </item>
+    
+    <item>
+      <title>Map and Reduce</title>
+      <link>https://flygar.github.io/posts/map-and-reduce/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://flygar.github.io/posts/map-and-reduce/</guid>
+      <description>Python records Map map的用法：
+map(function, sequence)   对 sequence 中的 item 依次执行 function(item)，并将结果组成一个 List 返回
+ &amp;gt;&amp;gt;&amp;gt; list(map(lambda x:x**2,[1,3,2,4])) [1, 9, 4, 16] &amp;gt;&amp;gt;&amp;gt; list(map(str,[1,3,2,4])) [&#39;1&#39;, &#39;3&#39;, &#39;2&#39;, &#39;4&#39;] &amp;gt;&amp;gt;&amp;gt; list(map(int,[&#39;1&#39;, &#39;3&#39;, &#39;2&#39;, &#39;4&#39;])) [1, 3, 2, 4]  def double(x): return 2 * x def triple(x): return 3 * x def square(x): return x * x # 列表元素是函数对象 funcs = [double, triple, square] # 相当于 [double(4), triple(4), square(4)] value = list(map(lambda f: f(4), funcs)) print(value) # output [8, 12, 16]  Reduce reduce的用法：</description>
+    </item>
+    
+  </channel>
+</rss>
