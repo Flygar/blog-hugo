@@ -20,21 +20,17 @@ theme = "maupassant"
     identifier = "archives"
     name = "归档"
     url = "/archives/"
-    weight = 3
+    weight = 1
   [[menu.main]]
     identifier = "about"
     name = "关于"
     url = "/about/"
-    weight = 4
+    weight = 2
 
 [[params.links]]
   title = "flysnow"
   name = "flysnow"
   url = "https://www.flysnow.org"
-[[params.links]]
-  title = "常用开发工具CDN镜像"
-  name = "常用开发工具CDN镜像"
-  url = "http://mirrors.flysnow.org/"
 
 ## 保持分类的原始名字（false会做转小写处理）
 preserveTaxonomyNames = true
@@ -50,20 +46,6 @@ summaryLength = 40
 [params.cc]
     name = "知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议"
     link = "https://creativecommons.org/licenses/by-nc-nd/4.0/"
-
-## 广告模块
-[[params.ads]]
-  title = "领取￥1888阿里云产品通用代金券"
-  url = "https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=jdg9oj97"
-[[params.ads]]
-  title = "领取￥1888阿里云产品通用代金券"
-  url = "https://promotion.aliyun.com/ntms/act/vmpt/aliyun-group/home.html?userCode=jdg9oj97"
-  img = "https://img.alicdn.com/tfs/TB17qJhXpzqK1RjSZFvXXcB7VXa-200-126.jpg"
-[[params.ads]]
-  title = "领取￥1888阿里云产品通用代金券"
-  url = "https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=jdg9oj97"
-  img = "https://img.alicdn.com/tfs/TB1aDXhXpzqK1RjSZFvXXcB7VXa-259-194.jpg"
-
   
 ## 评论
 [params.utteranc]
