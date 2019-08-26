@@ -1,7 +1,8 @@
 ---
 title: "Go Magic"
-date: 2019-08-26T19:44:53+08:00
-draft: true
+date: 2019-06-17T19:44:53+08:00
+draft: false
+categories: ["Go"]
 ---
 Go Tips
 <!--more-->

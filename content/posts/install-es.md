@@ -1,13 +1,12 @@
 ---
 title: "离线安装docker并部署elasticsearch组成集群"
 date: 2019-08-26T10:18:11+08:00
-draft: true
+draft: false
 toc: true
 commentDisabled: false
-tags: [ "Operation", "CentOS", "Elasticsearch", "Docker", "LInux", "Createrepo" ]
-topics: [ "Operation", "Linux", "Elasticsearch", "Docker" ]
+tags: [ "Operation", "CentOS", "Elasticsearch", "Docker", "Linux", "Createrepo" ]
+categories: ["技术"]
 ---
-
 在3台CentOS上离线安装Docker并部署Elasticsearch组成集群
 <!--more-->
 - 在每台CentOS上离线安装docker

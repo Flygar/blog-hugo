@@ -1,9 +1,9 @@
 ---
 title: "Go Proverbs"
-date: 2019-08-25T23:06:41+08:00
-draft: true
+date: 2019-06-17T23:06:41+08:00
+draft: false
 tags: [ "Proverbs", "Go" ]
-topics: [ "Go" ]
+categories: ["Go"]
 ---  
 see more: [https://go-proverbs.github.io/](https://go-proverbs.github.io)
 <h2><center>Simple, Poetic, Pithy</center></h2>
