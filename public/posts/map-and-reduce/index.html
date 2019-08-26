@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="generator" content="Hugo 0.56.3" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Map and Reduce | Flygar&#39;s Blog</title>
+    <meta property="og:title" content="Map and Reduce - Flygar&#39;s Blog">
+    <meta property="og:type" content="article">
+        
+        
+    <meta name="Keywords" content="golang,go语言,go语言笔记">
+    <meta name="description" content="Map and Reduce">
+        
+    <meta name="author" content="猪一头">
+    <meta property="og:url" content="https://flygar.github.io/posts/map-and-reduce/">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="stylesheet" href="/css/normalize.css">
+    
+        <link rel="stylesheet" href="/css/prism.css">
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+
+
+    
+    
+</head>
+
+<body>
+<header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://flygar.github.io/">
+                        Flygar&#39;s Blog
+                    </a>
+                
+                <p class="description">猪一头</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="" href="https://flygar.github.io/">首页</a>
+                    
+                    <a  href="https://flygar.github.io/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://flygar.github.io/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<div id="body">
+        
+        
+    <div class="container">
+        <div class="col-group">
+
+            <div class="col-8" id="main">
+                <div class="res-cons">
+                    <article class="post">
+                        <header>
+                            <h1 class="post-title">Map and Reduce</h1>
+                        </header>
+                        <date class="post-meta meta-date">
+                            1年1月1日
+                        </date>
+                        
+                        
+                        <div class="post-meta">
+                            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span> 阅读</span></span>
+                        </div>
+                        
+                        
+                        <div class="post-content">
+                            
+
+<p>Python records
+<!-- more --></p>
+
+<h3 id="map">Map</h3>
+
+<p><code>map</code>的用法：</p>
+
+<pre><code class="language-py">map(function, sequence)
+</code></pre>
+
+<blockquote>
+<p>对 sequence 中的 item 依次执行 function(item)，并将结果组成一个 <code>List</code> 返回</p>
+</blockquote>
+
+<pre><code class="language-py">&gt;&gt;&gt; list(map(lambda x:x**2,[1,3,2,4]))
+[1, 9, 4, 16]
+&gt;&gt;&gt; list(map(str,[1,3,2,4]))
+['1', '3', '2', '4']
+&gt;&gt;&gt; list(map(int,['1', '3', '2', '4']))
+[1, 3, 2, 4]
+</code></pre>
+
+<pre><code class="language-py">def double(x):
+    return 2 * x
+
+def triple(x):
+    return 3 * x
+
+def square(x):
+    return x * x
+
+# 列表元素是函数对象
+funcs = [double, triple, square]  
+
+# 相当于 [double(4), triple(4), square(4)]
+value = list(map(lambda f: f(4), funcs))
+
+print(value)
+# output
+[8, 12, 16]
+</code></pre>
+
+<h3 id="reduce">Reduce</h3>
+
+<p><code>reduce</code>的用法：</p>
+
+<pre><code class="language-py">reduce(function, sequence[item1,item2,item3...], initial)
+&gt;&gt;&gt; sum = lambda x, y : x + y
+&gt;&gt;&gt; sum(4,5)
+9
+</code></pre>
+
+<blockquote>
+<p>先将 sequence 的前两个 item 传给 function，即 function(item1, item2)，函数的返回值和 sequence 的下一个 item 再传给 function，即 function(function(item1, item2), item3)，如此迭代，直到 sequence 没有元素，如果有 initial，则作为初始值调用。</p>
+</blockquote>
+
+<pre><code class="language-py">&gt;&gt;&gt; from functools import reduce
+&gt;&gt;&gt; reduce(lambda x, y: x * y, [1, 2, 3, 4])  # 相当于 ((1 * 2) * 3) * 4
+24
+&gt;&gt;&gt; reduce(lambda x, y: x * y, [1, 2, 3, 4], 5)  # ((((5 * 1) * 2) * 3)) * 4
+120
+&gt;&gt;&gt; reduce(lambda x, y: x / y, [2, 3, 4], 72)  # (((72 / 2) / 3)) / 4
+3.0
+&gt;&gt;&gt; reduce(lambda x, y: x + y, [1, 2, 3, 4], 5)  # ((((5 + 1) + 2) + 3)) + 4
+15
+&gt;&gt;&gt; reduce(lambda x, y: x - y, [8, 5, 1], 20)  # ((20 - 8) - 5) - 1
+6
+</code></pre>
+
+<h3 id="exercise">Exercise</h3>
+
+<ol>
+<li>求<code>l=[5,8,1,10]</code>列表元素中的最大值，最小值，累加，累积，累除<br /></li>
+
+<li><p>判断元素<code>'7'</code>是否为列表<code>l</code>中的最大值，并输出最大值。</p>
+
+<pre><code class="language-py">&gt;&gt;&gt; from functools import reduce
+# 两两比较，取最大值
+&gt;&gt;&gt; f = lambda a, b: a if (a &gt; b) else b  
+&gt;&gt;&gt; reduce(f, l, 7)
+10
+&gt;&gt;&gt; reduce(f, [5, 4, 1, 6],7)
+7
+</code></pre></li>
+
+<li><p>元素<code>800</code>除以<code>l</code>中每个元素后的值的和</p>
+
+<pre><code class="language-py">&gt;&gt;&gt; reduce(lambda x, y: x + y, map(lambda x: 800 / x, l))
+1140.0
+</code></pre></li>
+
+<li><p>将列表<code>'l'</code>转换为整数<code>58110</code></p>
+
+<pre><code class="language-py">&gt;&gt;&gt; int(reduce(lambda x, y: x + y, map(str, l)))
+58110
+</code></pre></li>
+
+<li><p>利用map()函数，把用户输入的不规范的英文名字，变为首字母大写，其他小写的规范名字。输入：<code>['adam', 'LISA', 'barT']</code>，输出：<code>['Adam', 'Lisa', 'Bart']</code></p>
+
+<pre><code class="language-py">&gt;&gt;&gt; l2 = ['adam', 'LISA', 'barT']
+&gt;&gt;&gt; list(map(lambda x: x.capitalize(), l2))
+['Adam', 'Lisa', 'Bart']
+</code></pre></li>
+
+<li><p>把字符串<code>'123.456'</code>转换成浮点数<code>123.456</code></p>
+
+<pre><code class="language-py">&gt;&gt;&gt; float('123.456')
+123.456
+</code></pre></li>
+</ol>
+
+<p>{% note danger  %} <strong>参考</strong>: <a href="https://www.python-course.eu/python3_lambda.php">Python Course</a> {% endnote %}</p>
+
+                        </div>
+
+                        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://flygar.github.io/">猪一头</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://flygar.github.io/posts/map-and-reduce/">https://flygar.github.io/posts/map-and-reduce/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+                        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/quote/blog-backup/">Blog Backup</a></li>
+        
+        <li><a href="/quote/docker/">Docker</a></li>
+        
+        <li><a href="/quote/git/">Git</a></li>
+        
+        <li><a href="/quote/linux/">Linux</a></li>
+        
+        <li><a href="/posts/temple/">My first Post temple</a></li>
+        
+    </ul>
+</div>
+
+
+                        <div class="post-meta meta-tags">
+                            
+                            没有标签
+                            
+                        </div>
+                    </article>
+                    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "flygar/comments"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+                </div>
+            </div>
+            <div id="secondary">
+    <section class="widget">
+        <form id="search" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://flygar.github.io/">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://flygar.github.io/posts/temple/" title="My first Post temple">My first Post temple</a>
+    </li>
+    
+    <li>
+        <a href="https://flygar.github.io/posts/golang-magic/" title="Golang Magic">Golang Magic</a>
+    </li>
+    
+    <li>
+        <a href="https://flygar.github.io/posts/golang-bit-operation/" title="Golang Bit Operation">Golang Bit Operation</a>
+    </li>
+    
+    <li>
+        <a href="https://flygar.github.io/posts/golang-slice/" title="Golang Slice">Golang Slice</a>
+    </li>
+    
+    <li>
+        <a href="https://flygar.github.io/posts/golang-rune/" title="Golang rune and byte">Golang rune and byte</a>
+    </li>
+    
+    <li>
+        <a href="https://flygar.github.io/posts/map-and-reduce/" title="Map and Reduce">Map and Reduce</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title" style="color:red">福利派送</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/yunparter/invite.html?userCode=jdg9oj97" title="领取￥1888阿里云产品通用代金券" target="_blank" style="color:red">
+                
+                    领取￥1888阿里云产品通用代金券
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/act/vmpt/aliyun-group/home.html?userCode=jdg9oj97" title="领取￥1888阿里云产品通用代金券" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB17qJhXpzqK1RjSZFvXXcB7VXa-200-126.jpg">
+                
+            </a>
+        </li>
+        
+        <li>
+            <a href="https://promotion.aliyun.com/ntms/act/enterprise-discount.html?userCode=jdg9oj97" title="领取￥1888阿里云产品通用代金券" target="_blank" style="color:red">
+                
+                    <img src="https://img.alicdn.com/tfs/TB1aDXhXpzqK1RjSZFvXXcB7VXa-259-194.jpg">
+                
+            </a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">分类</h3>
+<ul class="widget-list">
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title">标签</h3>
+<div class="tagcloud">
+    
+    <a href="https://flygar.github.io/tags/go/">go</a>
+    
+    <a href="https://flygar.github.io/tags/temples/">temples</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://www.flysnow.org" title="flysnow">flysnow</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="http://mirrors.flysnow.org/" title="常用开发工具CDN镜像">常用开发工具CDN镜像</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://flygar.github.io/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+        </div>
+    </div>
+</div>
+<footer id="footer">
+    <div class="container">
+        &copy; 2019 <a href="https://flygar.github.io/">Flygar&#39;s Blog By 猪一头</a>.
+        Powered by <a rel="nofollow noreferer noopener" href="https://gohugo.io" target="_blank">Hugo</a>.
+        <a href="https://www.flysnow.org/" target="_blank">Theme</a> based on <a href="https://github.com/rujews/maupassant-hugo" target="_blank">maupassant</a>.
+        
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        
+        (function () {
+            $("pre code").parent().addClass("line-numbers")
+        }());
+
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script type="text/javascript" src="/js/prism.js" async="true"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src="/js/totop.js?v=0.0.0" async=""></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+</body>
+</html>
