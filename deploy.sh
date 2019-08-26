@@ -16,7 +16,7 @@ git commit -m "$msg"
 # Push source and build repos.
 git push origin master
 
-git submodule add git@github.com:Flygar/flygar.github.io.git public
+# git submodule add git@github.com:Flygar/flygar.github.io.git public
 #---------------------------------------------------
 
 echo -e "\033[0;32mFor flygar.github.io ....\033[0m"
