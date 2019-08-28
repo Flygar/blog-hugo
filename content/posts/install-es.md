@@ -408,8 +408,11 @@ vim /home/soft/docker-compose/docker-compose.yml
 重建container
 
 ```bash
+# 重启docker
+docker restart $(docker ps -qa)
 cd /home/soft/docker-compose/
 docker-compose up -d
+
 
 # 验证这个节点插件是否安装
 curl localhost:9200/_cat/plugins
