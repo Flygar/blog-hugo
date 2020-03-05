@@ -1,6 +1,6 @@
 ---
 title: "linux tips"
-date: 2019-05-01T20:32:34+08:00
+date: 2019-02-01T20:32:34+08:00
 # comment: false
 url: /2020/02/01/linux-tips.html
 tags: [ "Ubuntu", "Linux"]
