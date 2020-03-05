@@ -7,6 +7,7 @@ tags: [ "Proverbs", "Go" ]
 categories: ["Golang"]
 ---  
 see more: [https://go-proverbs.github.io/](https://go-proverbs.github.io)
+
 <h2><center>Simple, Poetic, Pithy</center></h2>
 <h3>
 <a href="https://www.youtube.com/watch?v=PAAkCSZUG1c&t=2m48s"><center>Don't communicate by sharing memory, share memory by communicating.</center></a>

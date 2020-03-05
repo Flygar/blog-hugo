@@ -1,5 +1,5 @@
 ---
-title: "vps安全指北"
+title: "vps 安全指北"
 date: 2020-03-05T20:32:34+08:00
 # comment: false
 url: /2020/03/05/vps-security.html
@@ -11,6 +11,7 @@ categories: ["Linux"]
 保护小鸡,从我做起。  
 <!--more-->
 ![image.png](https://i.loli.net/2020/03/03/lHyQ1Bxij74qPaL.png)
+
 ```sh
 # update list of available packages 
 # upgrade the system by installing/upgrading packages
@@ -199,12 +200,4 @@ sudo ufw disable
 ![image.png](https://i.loli.net/2020/03/03/X1SBETgFPnc2bUd.png)
 先过ufw规则，再过hosts.allow规则, 需要都通过  
 实现: 只允许IP: 49.xxx.xxx.xxx 访问vps的服务(端口)  
-心里终于舒坦了很多。
-
-
-
-docker run -d --name gost-client \
-    -p 32098:32098 \
-    ginuerzh/gost \
-    -L "ss://aes-256-gcm:Ss871546712@:32098" \
-    -F "http2://flygar:Go871546712@flygar.xyz:443"
+至此,心里终于舒坦了很多。  
