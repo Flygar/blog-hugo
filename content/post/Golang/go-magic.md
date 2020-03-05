@@ -1,10 +1,10 @@
 ---
 title: "Go Magic"
 date: 2019-06-17T19:44:53+08:00
-draft: false
+url: /2019/06/17/go-tips.html
 categories: ["Go"]
 ---
-Go Tips
+Golang Tips and Tricks
 <!--more-->
 ```go
 a := "hello"

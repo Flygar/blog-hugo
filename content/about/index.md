@@ -2,7 +2,7 @@
 title: "关于"
 date: 2019-06-17T22:52:07+08:00
 type: about
-commentDisabled: true
+commentDisabled: false
 ---
 <!--more-->
 - Do one thing and do it well
