@@ -26,6 +26,7 @@ summaryLength = 40
   # 全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能
   # toc = true  # 是否开启目录, 默认false
   draft = false # 是否作为草稿, 默认true
+  # comment = false # 不启用评论系统, 默认true
 
 ## 配置网站菜单
 [menu]
@@ -72,6 +73,6 @@ summaryLength = 40
 
 ## 侧边栏广告位, 可以多个
 [[params.ads]]
-  title = "【2019双12】ALL IN CLoud 低至1折"
-  url = "https://www.aliyun.com/minisite/goods?userCode=jdg9oj97&share_source=copy_link"
-  img = "https://img.alicdn.com/tfs/TB1_rYHo7P2gK0jSZPxXXacQpXa-690-388.jpg"
+  title = "TripodCloud Network"
+  url = "https://clients.tripodcloud.com/aff.php?aff=528"
+  img = "https://i.loli.net/2020/03/05/ukL4SFbdYah12em.png"

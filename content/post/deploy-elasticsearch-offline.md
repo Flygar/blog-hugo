@@ -1,5 +1,5 @@
 ---
-title: "离线部署elasticsearch集群"
+title: "离线环境下利用 docker 部署 Elasticsearch 集群"
 date: 2019-08-26T10:18:11+08:00
 # comment: false
 url: /2019/08/26/deploy-elasticsearch-offline.html
