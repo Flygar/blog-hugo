@@ -1,7 +1,7 @@
 ---
 title: "Ubuntu 16.04 下启用 TCP BBR 拥塞控制算法"
 date: 2020-01-05T20:32:34+08:00
-commentDisabled: true
+# comment: false
 url: /2020/01/05/linux-bbr.html
 tags: [ "Ubuntu", "Linux", "BBR"]
 categories: ["Linux"]

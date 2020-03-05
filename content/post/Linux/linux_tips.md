@@ -1,9 +1,9 @@
 ---
 title: "linux tips"
 date: 2020-02-01T20:32:34+08:00
-commentDisabled: true
+# comment: false
 url: /2020/02/01/linux-tips.html
-tags: [ "Ubuntu", "Linux" ]
+tags: [ "Ubuntu", "Linux"]
 categories: ["Linux"]
 ---
 

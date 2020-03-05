@@ -1,8 +1,10 @@
 ---
 title: "Go Magic"
 date: 2019-06-17T19:44:53+08:00
+# comment: false
 url: /2019/06/17/go-tips.html
-categories: ["Go"]
+tags: ["Go"]
+categories: ["Golang"]
 ---
 Golang Tips and Tricks
 <!--more-->

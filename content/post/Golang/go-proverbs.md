@@ -1,9 +1,10 @@
 ---
 title: "Go Proverbs"
 date: 2019-06-17T23:06:41+08:00
+# comment: false
 url: /2019/06/17/go-proverbs.html
 tags: [ "Proverbs", "Go" ]
-categories: ["Go"]
+categories: ["Golang"]
 ---  
 see more: [https://go-proverbs.github.io/](https://go-proverbs.github.io)
 <h2><center>Simple, Poetic, Pithy</center></h2>

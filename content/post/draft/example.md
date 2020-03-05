@@ -2,7 +2,7 @@
 title: "Filename"
 date: 2020-03-05T20:42:26+08:00
 draft: true
-commentDisabled: false
+comment: false
 url: /2019/08/26/deploy-elasticsearch-offline.html
 tags: [ "CentOS", "Elasticsearch", "Docker", "Linux", "Createrepo" ]
 categories: ["Linux"]
