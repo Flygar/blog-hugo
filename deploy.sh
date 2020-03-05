@@ -1,7 +1,4 @@
 #!/bin/bash
-# git submodule add git@github.com:Flygar/flygar.github.io.git public
-#---------------------------------------------------
-
 echo -e "\033[0;32mFor flygar.github.io ....\033[0m"
 # Build the project.
 hugo -t maupassant # if using a theme, replace by `hugo -t <yourtheme>`
@@ -25,7 +22,6 @@ git push origin master
 cd ..
 
 #-------------------------------------------------------
-
 echo -e "\033[0;32mFor blog-hugo...\033[0m"
 # rm -rf public
 # Add changes to git.

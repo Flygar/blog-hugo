@@ -1,21 +1,37 @@
-## 
+## 劝学
 妈的，半年不写。居然忘了当初写blog的正确姿势了，特此记录下  
 真是业精于勤荒于嬉，共勉
 
-blog-hugo这个仓库
-1. 存放源文件(blog的md文件）， 实现新环境(例如:重装系统后)快速写blog。 操作如下
-
-github.io仓库
-1. 存放最终发布的网站内容(就是blog-hugo它生成的放在了public下的东西)
-
-deploy.sh 脚本实现自动部署和发布
-过于简单，不做赘述，除非我痴呆了
-
 ## 使用姿势
-
 ```sh
+# clone repo
+git clone https://github.com/Flygar/blog-hugo.git
+cd blog-hugo
 
+# init and update submodule
+git clone https://github.com/flysnow-org/maupassant-hugo.git themes/maupassant
+git clone https://github.com/Flygar/flygar.github.io.git public
+
+
+# Create a new content file and automatically set the date and title.
+hugo new post/filename.md
+
+# After edit post/filename.md
+# Deploy site
+./deploy.sh
 ```
-git init
-git remote add origin git@github.com:Flygar/blog-hugo.git
-git branch --set-upstream-to=origin/master master
+
+## 说明
+[blog-hugo](https://github.com/Flygar/blog-hugo)
+- 存放源文件(blog的md文件）
+- 实现新环境(例如:重装系统后)快速写blog。
+
+submodule [public](https://github.com/Flygar/flygar.github.io)
+- 生成的是最终需要发布的网站内容: https://github.com/Flygar/flygar.github.io 
+
+submodule [themes/maupassant](https://github.com/flysnow-org/maupassant-hugo)
+- 使用最新的maupassant主题
+
+deploy.sh
+- 实现自动部署与发布
+

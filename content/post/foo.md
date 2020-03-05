@@ -1,7 +1,6 @@
 ---
 title: "vps安全指北"
 date: 2020-02-29T17:02:39+08:00
-draft: true
 url: /2018/02/24/golang-function-parameters-passed-by-value.html
 ---
 
