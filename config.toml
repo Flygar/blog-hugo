@@ -7,7 +7,7 @@ preserveTaxonomyNames = true
 ## 是否禁止 URL Path 转小写
 disablePathToLower = true
 ## 自定义摘要默认是70
-summaryLength = 40
+summaryLength = 0
 
 ## hasCJKLanguage = true ？？？
 ### publishdir = "public"
