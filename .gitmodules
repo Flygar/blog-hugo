@@ -1,6 +1,6 @@
 [submodule "themes/maupassant"]
 	path = themes/maupassant
-	url = git@github.com:rujews/maupassant-hugo.git
+	url = git@github.com:flysnow-org/maupassant-hugo.git
 [submodule "public"]
 	path = public
 	url = git@github.com:Flygar/flygar.github.io.git

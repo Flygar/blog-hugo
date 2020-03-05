@@ -25,6 +25,7 @@ summaryLength = 40
   localSearch = true # 启用本地搜索
   # 全局开关，你也可以在每一篇内容的 front matter 中针对单篇内容关闭或开启某些功能
   # toc = true  # 是否开启目录, 默认false
+  draft = false # 是否作为草稿, 默认true
 
 ## 配置网站菜单
 [menu]
