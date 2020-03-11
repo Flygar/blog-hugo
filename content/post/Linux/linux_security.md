@@ -1,7 +1,7 @@
 ---
 title: "vps 安全指北"
 date: 2020-03-05T20:32:34+08:00
-# comment: false
+comment: false
 url: /2020/03/05/vps-security.html
 tags: [ "Ubuntu", "Linux" ]
 categories: ["Linux"]

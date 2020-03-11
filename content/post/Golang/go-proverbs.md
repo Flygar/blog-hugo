@@ -1,7 +1,7 @@
 ---
 title: "Go Proverbs"
 date: 2019-06-17T23:06:41+08:00
-# comment: false
+comment: false
 url: /2019/06/17/go-proverbs.html
 tags: [ "Proverbs", "Go" ]
 categories: ["Golang"]

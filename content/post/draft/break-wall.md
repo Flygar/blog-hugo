@@ -1,14 +1,14 @@
 ---
 title: "上网"
 date: 2020-03-06T00:46:30+08:00
-draft: false
+draft: true
 comment: true
 url: /2019/03/06/break-wall.html
 tags: ["Docker", "Linux", "Go"]
 categories: ["Linux","Golang"]
 ---
 
-这篇文章可以写的更好，欢迎到 [https://github.com/haoel/haoel.github.io](https://github.com/haoel/haoel.github.io) 更新
+正确的上网姿势
 <!--more-->
 
 ## 0. 序
@@ -366,3 +366,5 @@ VPS 上正常安装并配置好 V2Ray，注意两点:
 欢迎补充和改善！
 
 （全文完）
+
+转载: 这篇文章可以写的更好，欢迎到 [https://github.com/haoel/haoel.github.io](https://github.com/haoel/haoel.github.io) 更新

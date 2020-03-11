@@ -14,11 +14,11 @@ summaryLength = 40
 ### canonifyurlsvv= true
 
 [author]
-  name = "猪一头"
+  name = "zhutou"
 
 [params]
   author = "Flygar"
-  subtitle = "猪一头"
+  subtitle = "zhutou"
   keywords = "golang,go语言,go,linux"
   description = "我是一头猪"
   # busuanzi = true # 启用不算子网页统计, 默认false
@@ -70,6 +70,10 @@ summaryLength = 40
   title = "飞雪无情的博客"
   name = "flysnow"
   url = "https://www.flysnow.org"
+[[params.links]]
+  title = "昨日当年"
+  name = "昨日当年"
+  url = "https://zuoridangnian.com"
 
 ## 侧边栏广告位, 可以多个
 [[params.ads]]

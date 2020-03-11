@@ -5,6 +5,4 @@ type: about
 comment: false
 ---
 
-- Do one thing and do it well
-- Done is better than perfect
-- Make it work, right and fast
+- 挣扎于浮世中的韭菜

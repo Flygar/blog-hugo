@@ -1,13 +1,13 @@
 ---
-title: "linux tips"
-date: 2019-02-01T20:32:34+08:00
-# comment: false
+title: "linux 命令"
+date: 2020-02-01T20:32:34+08:00
+comment: false
 url: /2020/02/01/linux-tips.html
 tags: [ "Ubuntu", "Linux"]
 categories: ["Linux"]
 ---
 
-有些命令不敲就容易忘了,记录下
+linux 命令记录
 <!--more-->
 
 ## 端口传输测试
