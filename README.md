@@ -20,6 +20,18 @@ hugo new post/filename.md
 # Deploy site
 # 执行脚本前还可以 rm -rf public/* , 但不要删除public目录。 然后去 xxxxx.github.io仓库的setting，添加 Custom domain(CNAME)(如果你有域名的话)。
 ./deploy.sh
+
+flygar.github.io
+http://flygar.org
+http://www.flygar.org
+https://flygar.org
+https://www.flygar.org
+
+域名
+example.com 称为裸域名，www.example.com, blog.example.com...为它的二级域名
+注意: 不要在您的DNS设置中使用实际域名，可以使用@表示域名
+记录类型A: 将域名指向IP
+记录类型CANME: 将域名指向域名
 ```
 
 ## 说明
