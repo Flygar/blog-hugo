@@ -19,7 +19,7 @@ summaryLength = 40
 [params]
   author = "Flygar"
   subtitle = "zhutou"
-  keywords = "golang,go语言,go,linux"
+  keywords = "flygar,golang,go语言,go,linux"
   description = "我是一头猪"
   # busuanzi = true # 启用不算子网页统计, 默认false
   localSearch = true # 启用本地搜索
