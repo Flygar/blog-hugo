@@ -1,5 +1,5 @@
 ---
-title: "摘录20200318"
+title: "摘录 20200318"
 date: 2020-03-18T00:31:57+08:00
 draft: false
 comment: false

@@ -1,9 +1,9 @@
 ---
-title: "After Dark 20200318"
+title: "天黑之后 20200318"
 date: 2020-03-18T00:58:02+08:00
 draft: false
 comment: false
-url: /2020/03/18/initiation.html
+url: /2020/03/18/after-dark.html
 tags: [ "天黑之后" ]
 categories: ["碎碎念"]
 ---
