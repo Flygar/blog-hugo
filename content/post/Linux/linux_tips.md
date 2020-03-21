@@ -3,7 +3,7 @@ title: "linux 命令"
 date: 2020-02-01T20:32:34+08:00
 comment: false
 url: /2020/02/01/linux-tips.html
-tags: [ "Ubuntu", "Linux"]
+tags: [ "Ubuntu" ]
 categories: ["Linux"]
 ---
 

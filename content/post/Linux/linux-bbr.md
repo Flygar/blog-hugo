@@ -3,7 +3,7 @@ title: "Ubuntu 16.04 下启用 TCP BBR 拥塞控制算法"
 date: 2020-01-05T20:32:34+08:00
 comment: false
 url: /2020/01/05/linux-bbr.html
-tags: [ "Ubuntu", "Linux", "BBR"]
+tags: ["BBR"]
 categories: ["Linux"]
 ---
 TCP BBR（Bottleneck Bandwidth and Round-trip propagation time）是由Google设计，于2016年发布的拥塞算法。以往大部分拥塞算法是基于丢包来作为降低传输速率的信号，而BBR则基于模型主动探测。该算法使用网络最近出站数据分组当时的最大带宽和往返时间来创建网络的显式模型。数据包传输的每个累积或选择性确认用于生成记录在数据包传输过程和确认返回期间的时间内所传送数据量的采样率。该算法认为随着网络接口控制器逐渐进入千兆速度时，分组丢失不应该被认为是识别拥塞的主要决定因素，所以基于模型的拥塞控制算法能有更高的吞吐量和更低的延迟，可以用BBR来替代其他流行的拥塞算法，例如CUBIC。Google在YouTube上应用该算法，将全球平均的YouTube网络吞吐量提高了4%，在一些国家超过了14%。

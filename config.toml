@@ -49,8 +49,8 @@ summaryLength = 40
 ## 代码高亮, 更多参考: https://gohugo.io/getting-started/configuration-markup#highlight
 [markup]
   [markup.highlight]
-    lineNos = false   # 开启行号显示
-    style = "github" # 比较中意的样式 rrt, pygments, rainbow_dash, pastie, native, dracula, github, solarized-dark
+    lineNos = false   # 开启行号显示,默认为false
+    style = "dracula" # 比较中意的样式 rrt, pygments, rainbow_dash, pastie, native, dracula, github, solarized-dark
 
 ## 评论
 ## 配置 utteranc 评论,教程参考 https://utteranc.es/
