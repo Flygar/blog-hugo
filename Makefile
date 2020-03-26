@@ -11,10 +11,10 @@ build:
 # public
 public : msg = "rebuilding site ${shell date}"
 define RUN_PUBLIC
-cd public && \
-git add -A && \
-git commit -m ${msg} && \
-git push origin master && \
+cd public; \
+git add -A; \
+git commit -m ${msg}; \
+git push origin master; \
 cd ..
 endef
 .PHONY: public
