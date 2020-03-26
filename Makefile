@@ -11,13 +11,11 @@ build:
 # public
 public : msg = "rebuilding site ${shell date}"
 define RUN_PUBLIC
-cd public
-git add -A
-git commit -m ${msg}
-git push origin master
-echo $${pwd}
+cd public && \
+git add -A && \
+git commit -m ${msg} && \
+git push origin master && \
 cd ..
-echo $${pwd}
 endef
 .PHONY: public
 public: 
@@ -27,13 +25,13 @@ public:
 # hugo-blog
 hugo : msg = "backup site ${shell date}"
 define RUN_HUGO
-git add -A
-git commit -m ${msg}
+git add -A && \
+git commit -m ${msg} && \
 git push origin master
 endef
 .PHONY: hugo
 hugo:
-	@${RUN_HUGO}
+	${RUN_HUGO}
 
 # clear
 clear : name = "www.flygar.org"
@@ -49,20 +47,3 @@ clear:
 .PHONY: test
 test: 
 	hugo server
-
-# 流程
-# 1. 写完blog后, make test
-# 2. 部署前可执行清理public目录， make clear
-# 3. 部署： make all
-
-
-# make test
-
-# make clear
-# make -n name="example.com" clear -f Makefile
-
-# make build && make public
-# make build && make -n msg="commit message" public -f Makefile
-
-# make hugo
-# make -n msg="commit message" hugo -f Makefile

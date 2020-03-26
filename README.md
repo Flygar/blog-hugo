@@ -17,13 +17,20 @@ git clone https://github.com/Flygar/flygar.github.io.git public
 hugo new post/filename.md
 
 # After edit post/filename.md
+# 本地验证
+make test
 
-# 执行脚本前还可以 rm -rf public/* , 但不要删除public目录。
-# 然后去 xxxxx.github.io仓库的setting，添加 Custom domain(CNAME)(如果你有域名的话,例如www.flygar.org)。
-# 改完后会在 xxxxx.github.io 下新增CNAME文件，为了避免冲突，进入public目录下执行 git pull
+# 执行脚本前还可以先执行 make clear 来清空 public 目录, 会自动生成CNAME文件
+# make clear
 
-# Deploy site
-./deploy.sh
+# Deploy site, 等同于: make build && make public && make hugo
+make all
+
+# 调试
+# clear: make -n name="example.com" clear -f Makefile
+# build: make -n build -f Makefile
+# public: make -n msg="commit message" public -f Makefile
+# hugo: make -n msg="commit message" hugo -f Makefile
 ```
 
 ## 说明
@@ -38,7 +45,7 @@ submodule [themes/maupassant](https://github.com/flysnow-org/maupassant-hugo)
 - 使用最新的maupassant主题
 
 deploy.sh
-- 实现自动部署与发布
+- ~~实现自动部署与发布~~ 使用Makefile代替
 
 DNS设置
 - example.com 称为裸域名，www.example.com, blog.example.com...为它的二级域名
