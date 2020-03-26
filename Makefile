@@ -25,13 +25,13 @@ public:
 # hugo-blog
 hugo : msg = "backup site ${shell date}"
 define RUN_HUGO
-git add -A && \
-git commit -m ${msg} && \
+git add -A; \
+git commit -m ${msg}; \
 git push origin master
 endef
 .PHONY: hugo
 hugo:
-	-${RUN_HUGO}
+	${RUN_HUGO}
 
 # clear
 clear : name = "www.flygar.org"
