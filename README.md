@@ -20,6 +20,7 @@ hugo new post/filename.md
 
 # 执行脚本前还可以 rm -rf public/* , 但不要删除public目录。
 # 然后去 xxxxx.github.io仓库的setting，添加 Custom domain(CNAME)(如果你有域名的话,例如www.flygar.org)。
+# 改完后会在 xxxxx.github.io 下新增CNAME文件，为了避免冲突，进入public目录下执行 git pull
 
 # Deploy site
 ./deploy.sh
