@@ -31,7 +31,7 @@ git push origin master
 endef
 .PHONY: hugo
 hugo:
-	${RUN_HUGO}
+	@${RUN_HUGO}
 
 # clear
 clear : name = "www.flygar.org"
