@@ -17,12 +17,12 @@ git clone https://github.com/Flygar/flygar.github.io.git public
 hugo new post/filename.md
 
 # After edit post/filename.md
+
+# 执行脚本前还可以 rm -rf public/* , 但不要删除public目录。
+# 然后去 xxxxx.github.io仓库的setting，添加 Custom domain(CNAME)(如果你有域名的话,例如www.flygar.org)。
+
 # Deploy site
-# 执行脚本前还可以 rm -rf public/* , 但不要删除public目录。 然后去 xxxxx.github.io仓库的setting，添加 Custom domain(CNAME)(如果你有域名的话)。
 ./deploy.sh
-
-# 
-
 ```
 
 ## 说明
