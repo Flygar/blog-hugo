@@ -15,7 +15,9 @@ cd public
 git add -A
 git commit -m ${msg}
 git push origin master
+echo $${pwd}
 cd ..
+echo $${pwd}
 endef
 .PHONY: public
 public: 
