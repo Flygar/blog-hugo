@@ -11,7 +11,6 @@ build:
 # public
 public : msg = "rebuilding site ${shell date}"
 define RUN_PUBLIC
-echo ${msg}
 cd public
 git add -A
 git commit -m ${msg}
@@ -26,14 +25,13 @@ public:
 # hugo-blog
 hugo : msg = "backup site ${shell date}"
 define RUN_HUGO
-echo ${msg}
 git add -A
 git commit -m ${msg}
 git push origin master
 endef
 .PHONY: hugo
 hugo:
-	${RUN_HUGO}
+	@${RUN_HUGO}
 
 # clear
 clear : name = "www.flygar.org"
