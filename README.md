@@ -23,8 +23,8 @@ make test
 # 执行脚本前还可以先执行 make clear 来清空 public 目录, 会自动生成CNAME文件
 # make clear
 
-# Deploy site, 等同于: make build && make public && make hugo
-make all
+# Deploy site, make 会执行Makefile中第一条命令 make all 等同于: make build && make public && make hugo
+make
 
 # 调试
 # clear: make -n name="example.com" clear -f Makefile

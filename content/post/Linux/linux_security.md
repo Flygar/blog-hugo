@@ -15,7 +15,11 @@ categories: ["Linux"]
 ```sh
 # update list of available packages 
 # upgrade the system by installing/upgrading packages
-apt update && apt upgrade
+apt update
+
+# 可选升级
+# apt upgrade
+apt install vim
 
 # who 或者 w 查看当前登陆的用户
 # 检查日志和登陆记录
@@ -75,18 +79,19 @@ service sshd restart # sudo /etc/init.d/ssh restart
 
 ### 设置只允许使用密钥登陆
 ```sh
-# 在客户端生成密钥
+# 在客户端生成密钥, 如果有就用原来的，不需要执行
 ssh-keygen -b 4096 -t rsa
 # 将客户端的公钥发送给vps的自定义用户
+# ssh-copy-id ${shortName}
 ssh-copy-id -p ${PORT} ${USERNAME}@${IP_address}
 
 # vps端配置config
 vim /etc/ssh/sshd_config
 
-RSAAuthentication yes  #默认已经允许 RSA 密钥
-PubkeyAuthentication yes    #默认已经启用公告密钥配对认证方式 
+RSAAuthentication yes  #默认已经允许 RSA 密钥, 不用动
+PubkeyAuthentication yes    #默认已经启用公告密钥配对认证方式，不用动
 AuthorizedKeysFile  %h/.ssh/authorized_keys    #默认就设定PublicKey文件路径，不用动
-PasswordAuthentication no #禁止密码验证登录。如果启用(yes)的话,RSA认证登录就没有意义了
+PasswordAuthentication no #禁止密码验证登录。如果启用(yes)的话,RSA认证登录就没有意义了，需要取消注释修改为 no
 
 # 应用配置
 service sshd restart # sudo /etc/init.d/ssh restart
@@ -129,17 +134,21 @@ sed -i "/$IP/d" /var/lib/denyhosts/hosts-restricted
 iptables -D INPUT -s $IP -j DROP 
 # iptables -A INPUT -s $IP -j DROP , ban了某个IP的永久访问
 
-# 还是不放心？还可以更无情的限制IP
+# 还是不放心？还可以更无情的限制IP。 说明: 这只是一个面，其实规则会写入防火墙中
 # 首先修改/etc/hosts.allow文件，将可访问服务器ssh服务的客户IP加入其中，格式如下
-sshd: 192.168.1.0/255.255.255.0
-sshd: 202.114.23.45 # 只允许访问ssh服务
-ALL: 211.67.67.89 # 允许访问所有服务
+sshd: 192.168.1.0/255.255.255.0 # 允许这个ip段访问ssh服务
+sshd: 202.114.23.45 # 只允许这个ip访问ssh服务
+ALL: 211.67.67.89 # 允许这个ip访问所有服务
+
 # 然后修改/etc/hosts.deny文件，加入禁用其它客户连接ssh服务
 sshd: ALL
+# 或者禁用所有
+ALL: ALL
 ```
 
 ### 开启(安装)防火墙
-关闭不必要的端口, 只开放所需端口。
+关闭不必要的端口, 只开放所需端口。  
+先过防火墙这关，再去检测是否符合`hosts.allow`及`hosts.deny`的条件，需要都符合才能通过。
 ```sh
 # 使用netstat查看目前开放的端口及链接情况
 # -n: don't resolve names 

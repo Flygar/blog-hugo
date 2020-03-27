@@ -44,17 +44,20 @@ echo $SHELL
 apt install git
 # oh-my-zsh
 sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-# 安装插件
-apt install zsh-syntax-highlighting
-apt install zsh-autosuggestions
 
-# config, 选择适合自已的插件, 越多越卡
+# 安装插件
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
+
+# config, 选择适合自已的插件
 vim ~/.zshrc
 # HIST_STAMPS="yyyy-mm-dd"
-# plugins=(git z)
+# plugins=(git git-open z history zsh-syntax-highlighting zsh-autosuggestions)
 # export LANG=en_US.UTF-8
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+# export TERM="xterm-256color"
+
+source ~/.zshrc
 ```
 
 ## 命令大全
