@@ -77,6 +77,10 @@ summaryLength = 40
 
 ## 侧边栏广告位, 可以多个
 [[params.ads]]
+  title = "Cubecloud"
+  url = "https://www.cubecloud.net/aff.php?aff=1764"
+  img = "https://raw.githubusercontent.com/Flygar/blogPics/dev/img/2020-03-30-23-31-06.png"
+[[params.ads]]
   title = "TripodCloud Network"
   url = "https://clients.tripodcloud.com/aff.php?aff=528"
   img = "https://i.loli.net/2020/03/05/ukL4SFbdYah12em.png"
