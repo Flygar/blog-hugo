@@ -27,7 +27,7 @@ less /var/log/auth.log
 who /var/log/wtmp
 ```
 
-### 设置一个足够复杂的密码
+## 设置一个足够复杂的密码
 - 不推荐使用单词或短语: superstar, magicmaster, woshiMT
 - 不推荐使用生日加姓名的组合方便记忆的密码: liergou1225, trump2016, jujingyi1994
 - 不推荐使用很长的字母与数字的组合: ABC12345678, qwert9876543210
@@ -37,7 +37,7 @@ who /var/log/wtmp
 >所以，请各位设置包括大小写字母和数字在内的、尽可能没有规律的字符串做密码。**足够复杂的密码，不在于变换了多少花样，而在于变换花样中找不到规律**，从而让扫描软件的词典和算法失效。
 - 推荐使用软件生成如下这种没有规律的密码: .ZHu87Yi$R
 
-### 变更ssh端口为非22
+## 变更ssh端口为非22
 ```sh
 # vim /etc/ssh/sshd_config
 # 改为你想要的端口,最好在1-1024之间，防止与用户进程端口冲突
@@ -47,7 +47,7 @@ Port 998
 service sshd restart # sudo /etc/init.d/ssh restart
 ```
 
-### 禁止root用户登陆
+## 禁止root用户登陆
 ```sh
 # 在vps端创建其他用户flygar，最好不要用会被扫描命中的名字，例如：admin,test,testuser1, foobar
 adduser flygar # adduser 比 useradd 命令更加友好，推荐使用
@@ -77,7 +77,7 @@ PermitRootLogin no
 service sshd restart # sudo /etc/init.d/ssh restart
 ```
 
-### 设置只允许使用密钥登陆
+## 设置只允许使用密钥登陆
 ```sh
 # 在客户端生成密钥, 如果有就用原来的，不需要执行
 ssh-keygen -b 4096 -t rsa
@@ -102,7 +102,7 @@ service sshd restart # sudo /etc/init.d/ssh restart
 
 其实还不够安全，vps上可能还暴露了3306,9200这种端口,需要利用deyhosts实现自动屏蔽疯狂尝试请求的IP。
 
-### 屏蔽扫描IP,拒绝成为肉鸡
+## 屏蔽扫描IP,拒绝成为肉鸡
 保护小鸡从我做起。  
 
 >denyhosts是Python语言写的一个程序，它会分析sshd的日志文件，当发现重复的失败登录时就会记录IP到/etc/hosts.deny文件，从而达到自动屏IP的功能。
@@ -146,7 +146,7 @@ sshd: ALL
 ALL: ALL
 ```
 
-### 开启(安装)防火墙
+## 开启(安装)防火墙
 关闭不必要的端口, 只开放所需端口。  
 先过防火墙这关，再去检测是否符合`hosts.allow`及`hosts.deny`的条件，需要都符合才能通过。
 ```sh
@@ -200,8 +200,14 @@ ufw delete allow 22 # 删除某个规则
 ufw delete allow ftp # 删除某个规则
 ufw reset  # 重置所有规则后需重新启用ufw
 
+# nginx
+ufw app list
+ufw allow 'Nginx Full' # 放行80和443
+# ufw allow 'Nginx HTTP' # 放行80端口
+# ufw allow 'Nginx HTTPS' # 放行443端口
+
 # 关闭ufw功能
-sudo ufw disable
+ufw disable
 
 # ufw相当于简化了iptables命令. 
 # 查看vps防火墙全部规则: iptables --list 为准

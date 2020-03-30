@@ -10,6 +10,29 @@ categories: ["Linux"]
 linux 命令记录
 <!--more-->
 
+### zsh
+```sh
+# 安装zsh
+apt update && apt upgrade && apt install zsh git curl vim
+
+# 安装 oh-my-zsh 
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# 安装插件
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
+
+# config, 选择适合自已的插件
+vim ~/.zshrc
+# HIST_STAMPS="yyyy-mm-dd"
+# plugins=(git git-open z history zsh-syntax-highlighting zsh-autosuggestions)
+# export LANG=en_US.UTF-8
+# export TERM="xterm-256color"
+
+source ~/.zshrc
+```
+
 ## 端口传输测试
 Netcat 号称 TCP/IP 的瑞士军刀
 ```sh
@@ -30,36 +53,6 @@ nc -vzw5 104.168.94.186 8080
 nc -v -v -w3 -z 104.168.94.186 8080-8083
 ```
 
-### zsh
-```sh
-# 安装zsh
-apt update && apt upgrade && apt install zsh
-# 变更shell
-chsh -s $(which zsh)
-# 查看当前shell
-echo $SHELL
-
-# 安装 oh-my-zsh 
-# git
-apt install git
-# oh-my-zsh
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-# 安装插件
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
-
-# config, 选择适合自已的插件
-vim ~/.zshrc
-# HIST_STAMPS="yyyy-mm-dd"
-# plugins=(git git-open z history zsh-syntax-highlighting zsh-autosuggestions)
-# export LANG=en_US.UTF-8
-# export TERM="xterm-256color"
-
-source ~/.zshrc
-```
-
 ## 命令大全
 ```sh
 # 测速 
@@ -76,6 +69,9 @@ bash <(curl -Lso- https://git.io/superspeed) # github: https://github.com/ernisn
 # 4647) China Mobile Group Zhejiang Co.,Ltd (Hangzhou, China) 
 # 7509) China Telecom ZheJiang Branch (Hangzhou, China)
 
+# https://teddysun.com/444.html
+wget -qO- bench.sh | bash # curl -Lso- bench.sh | bash
+
 # docker
 # 官方docker一键部署脚本
 wget -qO- get.docker.com | bash # curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
@@ -87,4 +83,7 @@ service docker status
 # dig
 dig WWW.EXAMPLE.COM +nostats +nocomments +nocmd
 dig EXAMPLE.COM +noall +answer
+
+# nginx
+
 ```
