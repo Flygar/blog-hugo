@@ -9,7 +9,8 @@ comment: false
 
 2020计划
 - go语言原本
-- tcp/ip
-- gost
+- tcp/ip 
+  - 图解TCP/IP (4.4 230/312)
+  - 图解HTTP （0）
 - k8s权威指南
 - linux 鸟哥私房菜
