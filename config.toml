@@ -18,7 +18,7 @@ summaryLength = 40
 
 [params]
   author = "Flygar"
-  subtitle = "zhutou"
+  subtitle = "图床在github上,翻墙浏览体验更加"
   keywords = "flygar,golang,go语言,go,linux"
   description = "flygar,golang,go语言,go,linux"
   # busuanzi = true # 启用不算子网页统计, 默认false
