@@ -71,9 +71,9 @@ summaryLength = 40
   name = "flysnow"
   url = "https://www.flysnow.org"
 [[params.links]]
-  title = "昨日当年"
-  name = "昨日当年"
-  url = "https://zuoridangnian.com"
+  title = "ngzhio"
+  name = "ngzhio"
+  url = "https://ngzhio.github.io/"
 
 ## 侧边栏广告位, 可以多个
 [[params.ads]]

@@ -7,10 +7,20 @@ comment: false
 
 - 挣扎于浮世中的韭菜
 
-2020计划
-- go语言原本
-- tcp/ip 
-  - 图解TCP/IP (4.4 230/312)
-  - 图解HTTP （0）
+2020书单
 - k8s权威指南
 - linux 鸟哥私房菜
+- 计算机网络 自顶向下方法
+
+<a 
+  class="book-container"
+  href="https://theoutstanding.dev/"
+  target="_blank"
+  rel="noreferrer noopener">
+  <div class="book">
+    <img
+      alt="The Outstanding Developer by Sebastien Castiel"
+      src="/book-cover.76b99e5d.png"
+      />
+  </div>
+</a>
