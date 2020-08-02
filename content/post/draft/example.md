@@ -10,7 +10,7 @@ categories: ["Linux","Golang"]
 ---
 
 一般不需要改动成下面的值
-toc: true
+toc: true 显示目录
 draft: true 标签表示这是个草稿,不会被发布到blog上的md文件。
 comment: true 标签表示禁用评论。
 
